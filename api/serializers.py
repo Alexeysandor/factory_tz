@@ -1,12 +1,12 @@
 from rest_framework.serializers import ModelSerializer
 
-from robots.models import Order
+from robots.models import Robots
 
 
 class Robot_serializer(ModelSerializer):
     # валидатор для модели робота.
     class Meta:
-        model = Order
+        model = Robots
         fields = ('model', 'version', 'created')
 
     def create(self, validated_data):
@@ -16,4 +16,4 @@ class Robot_serializer(ModelSerializer):
         serial = f"{validated_data['model']}-{validated_data['version']}"
         # После этого мы передаёт значение серии в данные для сохранения
         validated_data['serial'] = serial
-        return Order.objects.create(**validated_data)
+        return Robots.objects.create(**validated_data)

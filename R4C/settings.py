@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'R4C.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'factory',
+        'NAME': 'factory_tz',
         'USER': 'Admin',
         'PASSWORD': 'Admin',
         'HOST': '127.0.0.1',
